@@ -1,0 +1,518 @@
+{
+  "version": "1.0.0",
+  "language": "en",
+  "design_system": {
+    "project": "Naeim Mahmoudi Portfolio Admin",
+    "purpose": "Generate consistent high-fidelity reference images for an admin panel that will later be recreated as editable, reusable components in Figma.",
+    "language": "English UI by default for these reference images; all screens must allow localization and later support Persian RTL and English LTR.",
+    "visual_direction": {
+      "style": "Premium, calm, modern SaaS dashboard; clean editorial typography; precise spacing; restrained visual decoration; high information clarity.",
+      "density": "Comfortable medium density, suitable for professional daily use. Avoid oversized empty cards and avoid cramming too many controls together.",
+      "surfaces": "Soft neutral application background, white or near-white panels, subtle borders, restrained shadows, medium corner radii.",
+      "color_tokens": {
+        "primary": "#365CF5",
+        "primary_hover": "#2949D8",
+        "background": "#F6F7FB",
+        "surface": "#FFFFFF",
+        "text_primary": "#171923",
+        "text_secondary": "#667085",
+        "border": "#E5E7EF",
+        "success": "#16845B",
+        "warning": "#B7791F",
+        "danger": "#D92D20",
+        "info": "#2878C7"
+      },
+      "typography": "Use a legible contemporary sans-serif such as Inter. Clear hierarchy for page title, section title, body, labels, helper text and tables. Do not use decorative display fonts.",
+      "icons": "Consistent simple outline icons, one icon family, no emoji icons.",
+      "layout": "Desktop-first 1440x1000 reference viewport. Fixed left sidebar approximately 248 px, top header approximately 72 px, scrollable main content with a 24 px spacing system. Use a centered content area with responsive behavior implied.",
+      "accessibility": "High contrast, visible focus states where relevant, labels not color-only, readable text sizes, clear empty/loading/error states where applicable.",
+      "consistency": [
+        "Reuse the same sidebar, header, breadcrumbs, page title treatment, primary button, secondary button, inputs, cards, tables, badges, dialogs and toast styles across all screens.",
+        "Keep the active navigation item consistent with the current screen.",
+        "Use realistic sample data but do not include real personal secrets, access tokens, private documents or sensitive account data.",
+        "All screen content should be plausible and aligned with the page purpose.",
+        "Do not invent additional product modules beyond the page prompt.",
+        "Design for editable Figma recreation: use clear rectangular layout regions, consistent spacing, reusable components and predictable alignment.",
+        "Avoid mockups of a laptop, browser frame, device frame or presentation slide; render the application UI itself."
+      ]
+    },
+    "global_shell": {
+      "sidebar_sections": [
+        {
+          "label": "Overview",
+          "items": [
+            "Dashboard"
+          ]
+        },
+        {
+          "label": "Content",
+          "items": [
+            "Projects",
+            "Work Experience",
+            "Skills",
+            "Education",
+            "Blog",
+            "Page Builder",
+            "Custom Pages",
+            "Navigation",
+            "Media Library"
+          ]
+        },
+        {
+          "label": "Career Assets",
+          "items": [
+            "Resume Versions",
+            "Brand Profiles"
+          ]
+        },
+        {
+          "label": "Growth",
+          "items": [
+            "Analytics",
+            "SEO"
+          ]
+        },
+        {
+          "label": "Administration",
+          "items": [
+            "Users & Roles",
+            "Notifications",
+            "Activity Logs",
+            "Backups",
+            "System Pages",
+            "Settings",
+            "System Health"
+          ]
+        }
+      ],
+      "header": [
+        "Breadcrumbs or current page context",
+        "Global quick action only if relevant",
+        "Notification bell with unread count",
+        "Current administrator avatar and account menu"
+      ],
+      "sidebar_footer": [
+        "Environment indicator such as Production or Preview",
+        "Collapse sidebar control"
+      ],
+      "main_content_rules": [
+        "Page title and short explanatory subtitle at the top",
+        "Primary action placed consistently near the title when relevant",
+        "Filters and search directly above lists",
+        "Destructive actions visually separated and confirmed in dialogs",
+        "No public sign-up flow",
+        "Admin users are invited by the Super Admin",
+        "Role permissions must be reflected in UI affordances, but server-side enforcement is still required"
+      ]
+    },
+    "image_generation_rules": {
+      "output": "One screen per image, 16:10 or 16:9 landscape, crisp high-fidelity UI screenshot, no perspective distortion.",
+      "do_not": [
+        "Do not generate a collage of multiple screens unless a specific prompt asks for a comparison.",
+        "Do not add random charts, controls, labels or navigation items that conflict with the prompt.",
+        "Do not use lorem ipsum; use concise, realistic English interface copy.",
+        "Do not represent a static image as a functioning prototype.",
+        "Do not expose passwords, tokens, private URLs or other secrets."
+      ]
+    }
+  },
+  "screens": [
+    {
+      "id": "ADM-01",
+      "name": "Dashboard",
+      "route": "/admin",
+      "purpose": "Give the administrator a quick overview of content status, recent activity, pending approvals and service health.",
+      "prompt": "Create the main admin dashboard. Show a compact welcome heading, four KPI cards for Published Projects, Published Articles, Pending Approvals and PDF Downloads, a line chart for visits over time, a concise recent activity table, a pending approvals panel with preview/review actions, and a small system health summary. Keep the dashboard practical and avoid vanity metrics. Use realistic sample values and dates. The active sidebar item is Dashboard."
+    },
+    {
+      "id": "ADM-02",
+      "name": "Projects List",
+      "route": "/admin/projects",
+      "purpose": "Manage portfolio projects and their publication lifecycle.",
+      "prompt": "Create the Projects management list. Include page title and New Project button, search, filters for language, category and workflow status, a table with project title, slug, languages, updated date, owner/editor, status badge and row actions. Include draft, pending approval, published and archived examples. Add pagination and a clear empty-state design as a secondary state, not the main screen. The active sidebar item is Projects."
+    },
+    {
+      "id": "ADM-03",
+      "name": "Project Editor",
+      "route": "/admin/projects/:id",
+      "purpose": "Create and edit a project with localized content, reusable fields, SEO and workflow actions.",
+      "prompt": "Create a project editing screen with a two-column layout. Main column: title, slug, summary, rich text/content sections, project links, tags, technology stack and reusable structured fields. Side column: workflow status, language selector, visibility, SEO completeness, last saved state and contextual actions. Include Save Draft, Submit for Approval and Preview actions; publishing is only shown to users with permission. Make it clear that localized content can differ by language. Do not cram every field into one viewport; show a polished scrollable editor."
+    },
+    {
+      "id": "ADM-04",
+      "name": "Work Experience",
+      "route": "/admin/experience",
+      "purpose": "Manage work history records and the order and visibility of career entries.",
+      "prompt": "Create a Work Experience management screen. Include a sortable table or card list with role, company, employment dates, location, languages, visibility and updated date. Provide Add Experience, edit, duplicate, archive and reorder controls. Include a compact note that records can use configurable fields and localized descriptions. Use clear date formatting and status indicators."
+    },
+    {
+      "id": "ADM-05",
+      "name": "Skills",
+      "route": "/admin/skills",
+      "purpose": "Manage skills, categories, proficiency labels, ordering and visibility.",
+      "prompt": "Create a Skills management screen. Show grouped skill categories and a compact table with skill name, category, proficiency label, sort order, visibility and localized labels. Include search, category filter, Add Skill and drag-handle cues for ordering. Avoid decorative proficiency meters that imply unsupported exact measurements; use text labels or simple badges."
+    },
+    {
+      "id": "ADM-06",
+      "name": "Education",
+      "route": "/admin/education",
+      "purpose": "Manage education and certifications displayed on public profiles and resumes.",
+      "prompt": "Create an Education and Certifications management screen. Include a clean list/table with qualification, institution, dates, credential type, visibility, language availability and row actions. Add buttons for Add Education and Add Certification, and a reorder control. Show an appropriate empty-state treatment as a small secondary example or design note."
+    },
+    {
+      "id": "ADM-07",
+      "name": "Blog List",
+      "route": "/admin/blog",
+      "purpose": "Manage articles, categories, tags, authors and publishing status.",
+      "prompt": "Create a Blog management list. Include New Article, search, category and status filters, and a table with article title, author, category, language coverage, last updated, publication date and workflow status. Show draft, pending approval, published and archived statuses. Include row actions for edit, preview, duplicate and archive; avoid a public-facing blog layout."
+    },
+    {
+      "id": "ADM-08",
+      "name": "Blog Editor",
+      "route": "/admin/blog/:id",
+      "purpose": "Write localized articles and manage metadata and workflow.",
+      "prompt": "Create a focused blog editor. Main area: article title, slug, excerpt, rich text content editor, category, tags and author. Side panel: cover image selector, language variants, SEO preview, workflow status, save state and permitted workflow actions. Include a preview button and a subtle revision-history entry point. Use a realistic sample article title and avoid showing fake editor toolbar controls that look like unrelated tools."
+    },
+    {
+      "id": "ADM-09",
+      "name": "Page Builder",
+      "route": "/admin/page-builder",
+      "purpose": "Visually assemble pages from reusable sections without writing code.",
+      "prompt": "Create a professional visual Page Builder workspace. Use three zones: left component/section library with draggable blocks, central page canvas with selectable content sections and clear insertion markers, and right properties inspector for layout, typography, colors, spacing, background, buttons and responsive settings. Add desktop/tablet/mobile preview controls, undo/redo, Save Draft and Preview. Do not depict a full public website outside the canvas; the focus is the editor. Keep the interface realistic and editable in Figma."
+    },
+    {
+      "id": "ADM-10",
+      "name": "Custom Pages",
+      "route": "/admin/custom-pages",
+      "purpose": "Discover and manage code-based landing pages from a repository with controlled preview and approval.",
+      "prompt": "Create a Custom Pages administration screen for code-based pages discovered from a GitHub repository. Show page name, route, repository path, detected version or commit, last sync time, active/inactive state, preview status and approval status. Include Sync Repository, Preview, Set Active and Review Changes actions according to permission. Clearly distinguish imported code from approved production code. Do not show or expose repository secrets, access tokens or raw credentials."
+    },
+    {
+      "id": "ADM-11",
+      "name": "Navigation Menus",
+      "route": "/admin/navigation",
+      "purpose": "Manage header and footer menus, nested items and localized labels.",
+      "prompt": "Create a Navigation management screen. Show menu selector for Header and Footer, language selector, and a drag-and-drop tree of menu items with nested children. Each item should expose label, internal/external link type, destination, open behavior and visibility. Include Add Menu Item, Save Draft and Preview. Make the hierarchy easy to scan and show a warning state for a broken destination."
+    },
+    {
+      "id": "ADM-12",
+      "name": "Media Library",
+      "route": "/admin/media",
+      "purpose": "Centralize uploads, reuse, metadata and usage tracking for media assets.",
+      "prompt": "Create a Media Library screen with a searchable grid/list toggle, filters for file type and category, upload button, thumbnail grid and selectable asset details panel. The detail panel should show filename, title, alt text, file type, dimensions, size, upload date and where the asset is used. Include replace/rename and safe delete actions, with delete disabled or warned when the asset is in use. Use generic sample thumbnails and do not show private file URLs."
+    },
+    {
+      "id": "ADM-13",
+      "name": "Resume Versions",
+      "route": "/admin/resumes",
+      "purpose": "Manage independent role-specific, language-specific resume versions and PDFs.",
+      "prompt": "Create a Resume Versions screen. Show separate resume cards or rows for different job targets and languages, each with title, target role, language, content source (structured data or uploaded PDF), public/private access, version status, last updated date and download preview. Include Create Resume Version, Edit Content, Upload PDF, Generate PDF and Preview actions. Make independence between versions visually clear so changing one version does not imply changing others."
+    },
+    {
+      "id": "ADM-14",
+      "name": "Brand Profiles",
+      "route": "/admin/brand-profiles",
+      "purpose": "Manage centralized personal-brand information and overrides for pages and resume variants.",
+      "prompt": "Create a Brand Profiles management screen. Show multiple brand/profile cards with profile name, intended audience or role, default language, active state and last updated. Provide an editor preview for identity fields such as display name, headline, biography, contact links and social links. Include controls to use central profile values or override them on a specific page/resume. Keep private account settings out of the public brand fields."
+    },
+    {
+      "id": "ADM-15",
+      "name": "Analytics",
+      "route": "/admin/analytics",
+      "purpose": "Review privacy-conscious site and content performance.",
+      "prompt": "Create a privacy-conscious Analytics dashboard with date-range filters and clear charts for visits over time, most-viewed pages/projects, landing-page performance, resume PDF downloads and contact/social link clicks. Show concise metric cards and a ranked table of top pages. Avoid invasive visitor profiling, personally identifying visitor records or unnecessary tracking details. Include a small note that analytics are aggregated."
+    },
+    {
+      "id": "ADM-16",
+      "name": "SEO",
+      "route": "/admin/seo",
+      "purpose": "Manage localization-aware SEO metadata, sharing cards, canonical URLs and indexing controls.",
+      "prompt": "Create an SEO management screen with tabs for Global Defaults, Page Metadata, Social Sharing and Indexing. Show a page list with language, title/meta description completeness, canonical status and indexability. Include a realistic search result preview and social share preview. Expose sitemap and robots.txt status as configuration summaries, not raw server internals. Make it clear metadata can differ by language."
+    },
+    {
+      "id": "ADM-17",
+      "name": "Users and Roles",
+      "route": "/admin/users",
+      "purpose": "Invite users and manage default/custom roles and granular permissions.",
+      "prompt": "Create a Users & Roles administration screen. Use tabs for Users, Roles and Permission Matrix. The Users tab should show name, email, role, MFA status, invite status and last sign-in, with Invite User as primary action. The Roles tab should show default and custom roles. The permission matrix should organize modules and operations such as view, create, edit, delete, approve and publish. Emphasize that new accounts are invitation-only and role/permission controls are administrator-managed."
+    },
+    {
+      "id": "ADM-18",
+      "name": "Notifications Inbox",
+      "route": "/admin/notifications",
+      "purpose": "Triage important admin events and operational errors.",
+      "prompt": "Create an admin Notifications Inbox. Show filters for unread/read, severity and category; rows with severity icon, concise title, timestamp, related module and read state. Include a detail drawer for the selected notification with safe error summary, related record link, Mark as Read and Mark as Resolved actions. Use a clear visual distinction between informational, warning and critical notifications. Do not expose stack traces or secrets in the main inbox."
+    },
+    {
+      "id": "ADM-19",
+      "name": "Activity Logs",
+      "route": "/admin/activity-logs",
+      "purpose": "Audit security events and important content operations without storing before/after field diffs.",
+      "prompt": "Create an Activity Logs screen with date range, actor, module, event type and result filters. Use a table with timestamp, user identifier, event, affected content, result and a details action. Include security events and content operations such as create, edit, delete, approve, publish and archive. The detail view may show event metadata but must not display before/after field values or content diffs."
+    },
+    {
+      "id": "ADM-20",
+      "name": "Backups and Restore",
+      "route": "/admin/backups",
+      "purpose": "Manually inspect available backups and restore one after explicit confirmation.",
+      "prompt": "Create a Backups & Restore screen. Show a table of available backups with creation time, included data/assets, size, source, verification status and notes. Include Refresh List, Create Emergency Backup and Restore actions where supported. The restore flow must show a prominent confirmation dialog explaining that current data may be replaced and that an emergency backup should be taken first. Do not imply that automatic scheduled backups are enabled."
+    },
+    {
+      "id": "ADM-21",
+      "name": "System Pages",
+      "route": "/admin/system-pages",
+      "purpose": "Manage localized 404, access denied, maintenance and error page content safely.",
+      "prompt": "Create a System Pages management screen. Show editable entries for 404 Not Found, Access Denied, Maintenance and Generic Error, with language, status, last updated and preview actions. The editor should allow safe public-facing messages and localized content, but not expose stack traces, internal hostnames, database details or sensitive diagnostic information. Include preview and Save Draft actions."
+    },
+    {
+      "id": "ADM-22",
+      "name": "Settings",
+      "route": "/admin/settings",
+      "purpose": "Manage global site configuration, languages, theme defaults, domain and environment-safe settings.",
+      "prompt": "Create a Global Settings screen with clear grouped sections or tabs for Site Identity, Languages, Theme Defaults, Domain & Redirects, Public Contact Links and Admin Preferences. Show primary domain nmahmoudi.cv as sample configuration, but make it editable. Include fa/en language settings, RTL/LTR indicators, manual/system theme options and domain redirect management. Never show secrets, private keys or raw tokens. Separate dangerous actions and require confirmation."
+    },
+    {
+      "id": "ADM-23",
+      "name": "System Health",
+      "route": "/admin/system-health",
+      "purpose": "Monitor application, database, publishing operations and recent failures.",
+      "prompt": "Create a System Health screen with clear status cards for web application, API/backend, database, content publishing and storage integration. Include last check time, recent failed operations, error trend and safe diagnostic summaries. Provide retry or view-details actions only where appropriate. Do not display credentials, full stack traces, private infrastructure details or pretend that an unknown provider is already configured."
+    },
+    {
+      "id": "ADM-24",
+      "name": "Login and MFA",
+      "route": "/admin/login",
+      "purpose": "Provide a secure, clean entry point to the private admin panel.",
+      "prompt": "Create a polished admin sign-in screen with email and password fields, show/hide password control, Forgot Password link and Sign In button. Include a restrained brand mark and clear error feedback state. Do not show a public Sign Up link. Add a separate MFA verification state in the same design family, with one-time code entry, recovery guidance and a secure, calm tone. Avoid social login buttons unless explicitly configured."
+    },
+    {
+      "id": "ADM-25",
+      "name": "Forgot Password",
+      "route": "/admin/forgot-password",
+      "purpose": "Allow invited users to securely request password recovery.",
+      "prompt": "Create a Forgot Password screen matching the admin login visual language. Show an email field, Send Reset Link action, Back to Sign In link and a confirmation state that does not reveal whether an account exists. Include concise security-friendly helper text. Do not add registration or unrelated marketing content."
+    },
+    {
+      "id": "ADM-26",
+      "name": "Content Revision History",
+      "route": "/admin/content/:id/history",
+      "purpose": "Browse and restore earlier versions of published or edited content.",
+      "prompt": "Create a Content Revision History screen for one project or article. Show a vertical timeline or version table with version number, timestamp, editor identifier, workflow event and short summary. Include View Version and Restore This Version actions. Restoration must have a confirmation dialog and should create a new current version rather than silently erasing later history. Do not include before/after diff panels because detailed field diffs are not required."
+    },
+    {
+      "id": "ADM-27",
+      "name": "Approval Queue",
+      "route": "/admin/approvals",
+      "purpose": "Give authorized reviewers a central place to review content awaiting approval.",
+      "prompt": "Create a central Approval Queue screen. Show pending projects, blog posts, pages and resume variants in a table with content type, title, submitted by, submitted date, language and status. Provide Review, Request Changes and Approve actions according to permission. Include filters for content type, language and age. Make it clear that approval does not automatically grant publishing permission unless the user's role also permits publishing."
+    }
+  ],
+  "implementation_tasks": [
+    {
+      "phase": "Phase 0 — Requirements and project foundation",
+      "tasks": [
+        {
+          "id": "T-001",
+          "task": "Freeze the confirmed requirements and create a traceable feature checklist.",
+          "acceptance": "Every confirmed requirement maps to a screen, API/module, test or explicit future decision."
+        },
+        {
+          "id": "T-002",
+          "task": "Create the admin sitemap, route map and navigation hierarchy.",
+          "acceptance": "All 27 screens have stable route identifiers and no duplicated module is presented as a separate feature without a reason."
+        },
+        {
+          "id": "T-003",
+          "task": "Define the shared UI design tokens and component inventory.",
+          "acceptance": "Colors, typography, spacing, breakpoints, radii, borders, elevation, icon rules and component states are documented."
+        },
+        {
+          "id": "T-004",
+          "task": "Create a Figma file structure and shared components plan.",
+          "acceptance": "Pages are grouped by module; shared shell, tables, forms, dialogs, badges, navigation and states are reusable components."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 1 — Visual references and Figma",
+      "tasks": [
+        {
+          "id": "T-010",
+          "task": "Generate a reference image for each admin screen using the matching JSON prompt.",
+          "acceptance": "Each image follows the same global shell and visual tokens; no screen invents conflicting navigation or styles."
+        },
+        {
+          "id": "T-011",
+          "task": "Review images for consistency before rebuilding them in Figma.",
+          "acceptance": "Sidebar, header, typography, buttons, spacing, table density and status colors match across the screen set."
+        },
+        {
+          "id": "T-012",
+          "task": "Rebuild approved references as editable Figma frames and components.",
+          "acceptance": "UI is made from editable layers/components rather than using the generated screenshot as a flat background."
+        },
+        {
+          "id": "T-013",
+          "task": "Create responsive variants and Persian RTL versions for shared patterns.",
+          "acceptance": "The design system defines desktop/tablet/mobile behavior and RTL mirroring for navigation, forms, tables and directional icons."
+        },
+        {
+          "id": "T-014",
+          "task": "Prototype key flows in Figma.",
+          "acceptance": "Clickable flows cover login/MFA, edit content, submit for approval, approve/publish, invite user and restore backup confirmation."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 2 — Technical architecture and secure foundation",
+      "tasks": [
+        {
+          "id": "T-020",
+          "task": "Compare current official provider options for frontend hosting, backend/API, database, authentication/MFA, media storage and backup storage.",
+          "acceptance": "Decision record compares free-tier limits, security, cost, exportability, regional availability and lock-in using current official documentation."
+        },
+        {
+          "id": "T-021",
+          "task": "Define the application architecture, data model and API contracts before implementation.",
+          "acceptance": "Entities cover users, roles, permissions, localized content, workflow states, revisions, media, resumes, pages, SEO, notifications, audit events and backups."
+        },
+        {
+          "id": "T-022",
+          "task": "Set up repository, linting, type checking, automated tests and separate Preview/Production environments.",
+          "acceptance": "CI validates code and tests; secrets are isolated by environment and never exposed to client code."
+        },
+        {
+          "id": "T-023",
+          "task": "Implement authentication, invited-user onboarding, password recovery, rate limiting and MFA policy.",
+          "acceptance": "Public registration is disabled; MFA is enforced for administrators and sensitive roles; recovery and failed-login behavior are tested."
+        },
+        {
+          "id": "T-024",
+          "task": "Implement server-enforced RBAC and permission checks.",
+          "acceptance": "View/create/edit/delete/approve/publish permissions are checked server-side and tested against unauthorized requests."
+        },
+        {
+          "id": "T-025",
+          "task": "Implement audit events and the notification inbox foundation.",
+          "acceptance": "Security events and key content operations record actor ID, timestamp and result; field-level before/after diffs are not stored."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 3 — Content modules and publishing",
+      "tasks": [
+        {
+          "id": "T-030",
+          "task": "Implement reusable localized content fields and validation.",
+          "acceptance": "Fields support types, required/optional flags, validation and independent per-language values."
+        },
+        {
+          "id": "T-031",
+          "task": "Implement projects, work experience, skills and education CRUD.",
+          "acceptance": "Create/read/update/archive, ordering, localization, visibility and permission checks pass tests."
+        },
+        {
+          "id": "T-032",
+          "task": "Implement blog article CRUD and taxonomy.",
+          "acceptance": "Articles support categories, tags, authors, localized content and workflow status."
+        },
+        {
+          "id": "T-033",
+          "task": "Implement content workflow and approval queue.",
+          "acceptance": "Draft, pending approval, published and archived transitions are permission-checked and audited."
+        },
+        {
+          "id": "T-034",
+          "task": "Implement revision history and restore.",
+          "acceptance": "Previous versions can be viewed and restored; restoration creates a new version and preserves the history."
+        },
+        {
+          "id": "T-035",
+          "task": "Implement centralized media library and usage tracking.",
+          "acceptance": "Uploads, metadata, alt text, search, preview, reuse and in-use delete warnings work."
+        },
+        {
+          "id": "T-036",
+          "task": "Implement navigation menu management.",
+          "acceptance": "Header/footer menus support nested items, sorting, localized labels, internal/external links and validation."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 4 — Pages, resumes, SEO and insights",
+      "tasks": [
+        {
+          "id": "T-040",
+          "task": "Implement visual page builder with reusable sections and responsive settings.",
+          "acceptance": "A page can be assembled without code, previewed at supported breakpoints and saved as a draft."
+        },
+        {
+          "id": "T-041",
+          "task": "Implement controlled custom-page repository sync and approval.",
+          "acceptance": "Unreviewed code cannot reach production; secrets are protected server-side; preview and activation are permission-checked."
+        },
+        {
+          "id": "T-042",
+          "task": "Implement resume variants with upload and structured-data PDF generation paths.",
+          "acceptance": "Role/language variants are independent; public/private access is enforced server-side."
+        },
+        {
+          "id": "T-043",
+          "task": "Implement brand profiles and page-specific overrides.",
+          "acceptance": "Pages can inherit central fields or override selected values without unintentionally changing unrelated pages."
+        },
+        {
+          "id": "T-044",
+          "task": "Implement localization-aware SEO and share metadata.",
+          "acceptance": "Localized metadata, canonical URLs, social previews, sitemap and robots behavior are validated."
+        },
+        {
+          "id": "T-045",
+          "task": "Implement privacy-conscious analytics.",
+          "acceptance": "Date-filtered aggregate metrics cover page/project views, landing pages, PDF downloads and contact/social link clicks."
+        }
+      ]
+    },
+    {
+      "phase": "Phase 5 — Operations, reliability and release",
+      "tasks": [
+        {
+          "id": "T-050",
+          "task": "Implement system pages and safe public error messages.",
+          "acceptance": "Localized 404, access denied, maintenance and generic error pages are editable without exposing sensitive diagnostics."
+        },
+        {
+          "id": "T-051",
+          "task": "Implement manual backup listing and guarded restore.",
+          "acceptance": "Admins can inspect backup coverage, choose a backup and confirm restore; an emergency backup is encouraged or required where feasible."
+        },
+        {
+          "id": "T-052",
+          "task": "Implement system health and safe operational diagnostics.",
+          "acceptance": "Health checks and failed operations are visible without exposing credentials or internal secrets."
+        },
+        {
+          "id": "T-053",
+          "task": "Implement export and portability package.",
+          "acceptance": "Content, translations, page-builder structures, resume metadata, asset manifest and migration documentation can be exported."
+        },
+        {
+          "id": "T-054",
+          "task": "Run risk-based end-to-end tests and production-readiness review.",
+          "acceptance": "Login/MFA, RBAC, content CRUD, preview/publish, code approval, private files, restore and localization have passing critical tests."
+        },
+        {
+          "id": "T-055",
+          "task": "Document deployment, environment configuration, rollback and administrator procedures.",
+          "acceptance": "A new maintainer can deploy to Preview, validate, obtain approval and release to Production using the documented process."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "The prompts are reference-image instructions, not implementation specifications.",
+    "Generated screenshots should be reconstructed as editable Figma components and frames.",
+    "The UI is English-first in the reference images, but the design must support English LTR and Persian RTL.",
+    "Technical provider selection remains an explicit research task; do not assume any provider is selected."
+  ]
+}
